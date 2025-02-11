@@ -22,14 +22,14 @@
     3. 相邻传感器的变化仅仅只是横/纵坐标变化了一个internal
 ![alt text](doc/image/coordinate.png)
 
-## 压力中心坐标计算方法 (![alt text](doc/formal/x_y_cop.svg))  
+## 压力中心坐标计算方法 ($X_{COP},Y_{COP}$)  
 使用传统的压力加权平均法：  
 
    <div style="text-align: center;">
      <img src="doc/formal/x_y_cop_formal.svg" alt="图片描述" />
    </div>
 
-其中，![alt text](doc/formal/f_i.svg) 是传感器的压力值，![alt text](doc/formal/x_y_i.svg) 是传感器的坐标。
+其中，$F_i$ 是传感器的压力值，($x_i,y_i$) 是传感器的坐标。
 
 
 
@@ -53,7 +53,7 @@
      <img src="doc/formal/f_cop_formal.svg" alt="图片描述" />
    </div>  
 
-   其中，$\epsilon $ = 0.001 用于避免除零错误。
+   其中，![alt text](doc/formal/epsilon.svg) 是一个修正系数，取值 0.001 用于避免除零错误。
 
 ---
 
