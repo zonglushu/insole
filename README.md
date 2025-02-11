@@ -38,8 +38,9 @@ X_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot x_i}{\sum_{i=1}^{n} F_i}, \quad 
    计算每个传感器到压力中心的欧几里得距离：  
    $$
    d_i = \sqrt{(x_i - X_{\text{COP}})^2 + (y_i - Y_{\text{COP}})^2}
+   
    $$  
-
+ 
    这个距离反映了传感器与压力中心的空间关系。
    <br>
 

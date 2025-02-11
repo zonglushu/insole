@@ -8,8 +8,8 @@
 本项目使用力科公司RPPS-16产品进行压力采集。现阶段通过数据模拟以跳过 将压力数据从通信帧中进行提取阶段。每个鞋垫其十六个传感器分布位置如下图所示。
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="image-1.png" alt="Image 1" style="width: 48%;"/>
-  <img src="image.png" alt="Image 2" style="width: 48%;"/>
+  <img src="doc/image/left-insole.png" alt="Image 1" style="width: 48%;"/>
+  <img src="doc/image/right-insole.png" alt="Image 2" style="width: 48%;"/>
 </div>
 
 ## 坐标系确定
@@ -20,7 +20,7 @@
     1. 第一个传感器坐标C1/C3为小矩形左上角坐标横坐标加3个internal，纵坐标减4个internal
     2. C12、C13、C14与C11、C3以及C7、C8位于同一直线上，所以只需拿到该条直线公式即可，但现版本并未实现该直线公式，仅仅只是变化纵坐标。
     3. 相邻传感器的变化仅仅只是横/纵坐标变化了一个internal
-![alt text](image-3.png)
+![alt text](doc/image/coordinate.png)
 
 ## 压力中心坐标计算方法 ($X_{\text{COP}}$,$Y_{\text{COP}}$)  
 使用传统的压力加权平均法：  
