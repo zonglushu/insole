@@ -24,7 +24,7 @@
 
 ## 压力中心坐标计算方法 ($X_{\text{COP}}$,$Y_{\text{COP}}$)  
 使用传统的压力加权平均法：  
-
+![alt text](doc/formal/x_cop.svg)
 $$ 
 X_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot x_i}{\sum_{i=1}^{n} F_i}, \quad Y_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot y_i}{\sum_{i=1}^{n} F_i} $$ 
 其中，$F_i$ 是传感器的压力值，$(x_i, y_i)$ 是传感器的坐标。
