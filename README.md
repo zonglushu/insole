@@ -28,6 +28,7 @@
    <div style="text-align: center;">
      <img src="doc/formal/x_y_cop_formal.svg" alt="图片描述" />
    </div>
+
 其中，![alt text](doc/formal/f_i.svg) 是传感器的压力值，![alt text](doc/formal/x_y_i.svg) 是传感器的坐标。
 
 
@@ -47,9 +48,11 @@
 
 **等效压力值 $F_{\text{COP}}$ 的计算**：  
    使用修正后的距离 \(d_i\) 计算等效压力值：
+   
    <div style="text-align: center;">
      <img src="doc/formal/f_cop_formal.svg" alt="图片描述" />
    </div>  
+
    其中，$\epsilon = 0.001$ 用于避免除零错误。
 
 ---
