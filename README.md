@@ -47,8 +47,8 @@
    <br>
 
 **等效压力值 $F_{\text{COP}}$ 的计算**：  
-   使用修正后的距离 \(d_i\) 计算等效压力值：
-   
+   使用修正后的距离 $d_i$ 计算等效压力值：  
+
    <div style="text-align: center;">
      <img src="doc/formal/f_cop_formal.svg" alt="图片描述" />
    </div>  
