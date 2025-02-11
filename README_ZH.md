@@ -22,13 +22,13 @@
     3. 相邻传感器的变化仅仅只是横/纵坐标变化了一个internal
 ![alt text](doc/image/coordinate.png)
 
-## 压力中心坐标计算方法 ($X_{\text{COP}}$,$Y_{\text{COP}}$)  
-使用传统的压力加权平均法： 
-![alt text](doc/formal/x_cop.svg)
+## 压力中心坐标计算方法 (![alt text](doc/formal/x_y_cop.svg))  
+使用传统的压力加权平均法：  
 
-$$ 
-X_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot x_i}{\sum_{i=1}^{n} F_i}, \quad Y_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot y_i}{\sum_{i=1}^{n} F_i} $$ 
-其中，$F_i$ 是传感器的压力值，$(x_i, y_i)$ 是传感器的坐标。
+   <div style="text-align: center;">
+     <img src="doc/formal/x_y_cop_formal.svg" alt="图片描述" />
+   </div>
+其中，![alt text](doc/formal/f_i.svg) 是传感器的压力值，![alt text](doc/formal/x_y_i.svg) 是传感器的坐标。
 
 
 
@@ -37,18 +37,19 @@ X_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot x_i}{\sum_{i=1}^{n} F_i}, \quad 
 
 **传感器到压力中心的距离 $d_i$** 的计算：  
    计算每个传感器到压力中心的欧几里得距离：  
-   $$
-   d_i = \sqrt{(x_i - X_{\text{COP}})^2 + (y_i - Y_{\text{COP}})^2}
-   $$  
-
+   <div style="text-align: center;">
+     <img src="doc/formal/di_formal.svg" alt="图片描述" />
+   </div>
+  
+ 
    这个距离反映了传感器与压力中心的空间关系。
    <br>
 
 **等效压力值 $F_{\text{COP}}$ 的计算**：  
-   使用修正后的距离 \(d_i\) 计算等效压力值：  
-   $$
-   F_{\text{COP}} = \frac{\sum_{i=1}^{n} \frac{F_i^2}{d_i + \epsilon}}{\sum_{i=1}^{n} \frac{F_i}{d_i + \epsilon}}
-   $$ 
+   使用修正后的距离 \(d_i\) 计算等效压力值：
+   <div style="text-align: center;">
+     <img src="doc/formal/f_cop_formal.svg" alt="图片描述" />
+   </div>  
    其中，$\epsilon = 0.001$ 用于避免除零错误。
 
 ---
@@ -58,8 +59,8 @@ X_{\text{COP}} = \frac{\sum_{i=1}^{n} F_i \cdot x_i}{\sum_{i=1}^{n} F_i}, \quad 
 
 ### 修正后的物理意义
 
-- **压力中心坐标 $(X_{\text{COP}}, Y_{\text{COP}})$**：反映了足底压力的空间分布中心。  
-- **等效压力值 $F_{\text{COP}}$**：结合了压力值和传感器到压力中心的距离，能够更好地反映压力分布的集中程度。  
+- **压力中心坐标 ![alt text](doc/formal/x_y_cop.svg)**：反映了足底压力的空间分布中心。  
+- **等效压力值 ![alt text](doc/formal/f_cop.svg)**：结合了压力值和传感器到压力中心的距离，能够更好地反映压力分布的集中程度。  
   - 高压力值且靠近压力中心的传感器对结果贡献更大。  
   - 低压力值或远离压力中心的传感器对结果贡献较小。
 
