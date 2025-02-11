@@ -53,7 +53,7 @@
      <img src="doc/formal/f_cop_formal.svg" alt="图片描述" />
    </div>  
 
-   其中，$\epsilon = 0.001$ 用于避免除零错误。
+   其中，$\epsilon $ = 0.001 用于避免除零错误。
 
 ---
 
