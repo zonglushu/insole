@@ -106,7 +106,7 @@ class PressureDataLoader:
 class CoordinateDataLoader:
     def __init__(self, file_path,left_map,right_map):
         self.file_path = file_path
-        self.rectangle_width_hight= [12, 6] # 鞋垫所在矩形的宽度和高度
+        self.rectangle_width_hight= [5, 10] # 鞋垫所在矩形的宽度和高度
         self.left_map_rule: Callable[[list, list, dict], None] = left_map
         self.right_map_rule: Callable[[list, list, dict], None] = right_map
         self.coordinate_groups = {
