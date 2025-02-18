@@ -16,7 +16,11 @@ class PressureDataLoader:
         参数:
             file_path (str): CSV文件路径。
         """
-        self.file_path = file_path
+        # 如果传入的是字符串，将其转换为列表
+        if isinstance(file_path, str):
+            self.file_path = [file_path]
+        else:
+            self.file_path = file_path
         self.sensor_groups = {
             "frontend": [
                 "sensor1",
@@ -45,7 +49,12 @@ class PressureDataLoader:
         返回:
             dict: 包含每个时间戳对应的压力数据，按左右脚分组。
         """
-        df = pd.read_csv(self.file_path)
+        # df = pd.read_csv(self.file_path)
+        # 使用列表推导式加载每个CSV文件
+        dataframes = [pd.read_csv(fs) for fs in self.file_path]
+
+        # 使用concat函数合并所有数据框
+        df = pd.concat(dataframes, ignore_index=True)
         grouped_by_time = df.groupby("timestamp")
         self.pressure_data = {
             timestamp: self._process_group(group)
@@ -99,6 +108,7 @@ class PressureDataLoader:
         foot_group = group[group["foot"] == foot]
         pressure_data = {}
         for region, sensors in self.sensor_groups.items():
+            # print(foot_group[sensors].values.tolist())
             pressure_data[region] = foot_group[sensors].values.tolist()[0]
         return pressure_data
 
