@@ -51,7 +51,7 @@ class PressureDataLoader:
         """
         # df = pd.read_csv(self.file_path)
         # 使用列表推导式加载每个CSV文件
-        dataframes = [pd.read_csv(fs) for fs in self.file_path]
+        dataframes = [pd.read_csv(fs)  for fs in self.file_path]
 
         # 使用concat函数合并所有数据框
         df = pd.concat(dataframes, ignore_index=True)
